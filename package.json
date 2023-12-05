@@ -7,12 +7,9 @@
     "build": "npx tsc",
     "start": "node dist/server.js",
     "dev": "nodemon server.ts",
-    "test": "jest"
+    "test": "jest --testTimeout=2000 --detectOpenHandles"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -49,5 +46,4 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.2"
   }
-}
 }

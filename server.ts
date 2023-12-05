@@ -1,9 +1,10 @@
-import express, { Express, Request, Response, Application } from "express";
+// server.ts
+
+import express, { Application } from "express";
 import dotenv from "dotenv";
 import morganMiddleware from "./app/middleware/morgan.middleware";
 import { AppRouter } from "./app/routes";
 
-//For env File
 dotenv.config();
 
 const app: Application = express();
@@ -13,8 +14,11 @@ app.use(morganMiddleware);
 app.use(express.json());
 
 // Versioning API
-export default app.use("/api/v1", AppRouter);
+app.use("/api/v1", AppRouter);
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is Fire at http://localhost:${port}`);
 });
+
+// Export the server for testing purposes
+export { server, app };
