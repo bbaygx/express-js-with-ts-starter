@@ -1,7 +1,7 @@
 // test/user.test.ts
 
 import request from "supertest";
-import { server } from "../server"; // Import the server
+import { server } from "./app.test"; // Import the server
 
 describe("GET /api/v1/users", () => {
   it("should return all products", async () => {
