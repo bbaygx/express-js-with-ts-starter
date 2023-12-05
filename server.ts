@@ -12,9 +12,8 @@ const port = process.env.PORT || 8000;
 app.use(morganMiddleware);
 app.use(express.json());
 
-
 // Versioning API
-app.use("/api/v1", AppRouter);
+export default app.use("/api/v1", AppRouter);
 
 app.listen(port, () => {
   console.log(`Server is Fire at http://localhost:${port}`);
